@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        .error {
+            color: red;
+            display: none;
+        }
+        .input-error {
+            border: 1px solid red;
+        }
+    </style>
+    <script>
+        function validateField(field, regex, errorMessage) {
+            var value = field.value;
+            var errorElement = document.getElementById(field.id + "-error");
+            if (!regex.test(value)) {
+                field.classList.add("input-error");
+                errorElement.style.display = "inline";
+                errorElement.innerText = errorMessage;
+                return false;
+            } else {
+                field.classList.remove("input-error");
+                errorElement.style.display = "none";
+                return true;
+            }
+        }
+
+        function validateForm() {
+            var isNameValid = validateField(document.getElementById("name"), /.+/, "This field is required");
+            var isEmailValid = validateField(document.getElementById("email"), /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, "A valid email address is required");
+            var isWebsiteValid = validateField(document.getElementById("website"), /^(https?:\/\/)?([\w\d\-]+\.)+\w{2,}(\/.*)*$/, "A valid URL is required");
+            var isMessageValid = validateField(document.getElementById("message"), /.+/, "This field is required");
+
+            return isNameValid && isEmailValid && isWebsiteValid && isMessageValid;
+        }
+
+        window.onload = function() {
+            document.getElementById("name").addEventListener("input", function() {
+                validateForm();
+            });
+            document.getElementById("email").addEventListener("input", function() {
+                validateForm();
+            });
+            document.getElementById("website").addEventListener("input", function() {
+                validateForm();
+            });
+            document.getElementById("message").addEventListener("input", function() {
+                validateForm();
+            });
+
+            document.getElementById("form").addEventListener("submit", function(event) {
+                event.preventDefault();
+                if (validateForm()) {
+                    alert("Submitted");
+                    document.getElementById("name").value="";
+                    document.getElementById("email").value="";
+                    document.getElementById("website").value="";
+                    document.getElementById("message").value="";
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <h2>Form Validation</h2>
+    <form id="form">
+        <table>
+            <tr>
+                <td><label for="name">Name:</label></td>
+                <td><input type="text" id="name" name="name"></td>
+                <td><span id="name-error" class="error">This field is required</span></td>
+            </tr>
+            <tr>
+                <td><label for="email">Email:</label></td>
+                <td><input type="text" id="email" name="email"></td>
+                <td><span id="email-error" class="error">A valid email address is required</span></td>
+            </tr>
+            <tr>
+                <td><label for="website">Website:</label></td>
+                <td><input type="text" id="website" name="website"></td>
+                <td><span id="website-error" class="error">A valid URL is required</span></td>
+            </tr>
+            <tr>
+                <td><label for="message">Message:</label></td>
+                <td><textarea id="message" name="message"></textarea></td>
+                <td><span id="message-error" class="error">This field is required</span></td>
+            </tr>
+            <tr>
+                <td colspan="3" style="text-align: center;">
+                    <input type="submit" value="Submit">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

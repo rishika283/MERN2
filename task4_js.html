@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task 4 JS</title>
+    </head>
+    <body>
+        <button onclick="return giveDate()">Show Date</button>
+        <p id="ans1"></p>
+        <button onclick="return giveTime()">Show Time</button>
+        <p id="ans2"></p>
+
+        <script>
+            const months=["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+            const days=["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+            function giveDate(){
+                const date=new Date()
+                const day=date.getDate();
+                const month=months[date.getMonth()];
+                const year=date.getFullYear();
+                let str=`${day}/${month}/${year}`;
+                document.getElementById("ans1").innerHTML=str;
+                return false;
+            }
+            function giveTime(){
+                const date=new Date();
+                const dayname=days[date.getDay()];
+                const day=date.getDate();
+                const month=months[date.getMonth()];
+                const year=date.getFullYear();
+                var off=date.getTimezoneOffset();
+                var ist=330;
+                var time=new Date(date.getTime()+(ist+off)*60000);
+                const hours=time.getHours();
+                const mins=time.getMinutes();
+                const sec=time.getSeconds();
+                let str=`${dayname} ${month} ${day} ${year} ${hours}:${mins}:${sec} GMT+0530 (India Standard Time)`;
+                document.getElementById("ans2").innerHTML=str;
+                return false;
+            }
+        </script>
+    </body>
+</html>

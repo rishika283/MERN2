@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task 6 Bootstrap</title>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <form onsubmit="sub()" class="container text-left text-dark px-4 py-3" style="width: 30%; background-color: lightgrey;">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input id="name" type="text" class="form-control" oninput="check()">
+            <span id="error1" style="color: crimson; visibility: hidden;">Name is required</span>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" type="email" class="form-control" oninput="check()">
+            <span id="error2" style="color: crimson; visibility: hidden;">Email is required</span>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input id="password" type="password" class="form-control" oninput="check()">
+            <span id="error3" style="color: crimson; visibility: hidden;">Password is required</span>
+        </div>
+        <div class="form-group">
+            <label for="hobbies">Hobbies</label>
+            <select class="form-control">
+                <option></option>
+                <option>Reading</option>
+                <option>Dancing</option>
+                <option>Singing</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <input class="btn btn-danger col-md-12" type="submit">
+        </div>
+        </form>
+
+
+        <script>
+            function check(){
+                let name=document.getElementById("name").value;
+                let email=document.getElementById('email').value;
+                let pass=document.getElementById("password").value;
+                if (name=="" || name==" "){
+                    document.getElementById("error1").style.visibility="visible";
+                }
+                else{
+                    document.getElementById("error1").style.visibility="hidden";
+                }
+                if (email=="" || email==" "){
+                    document.getElementById("error2").style.visibility="visible";
+                }
+                else{
+                    document.getElementById("error2").style.visibility="hidden";
+                }
+                if (pass=="" || pass==" "){
+                    document.getElementById("error3").style.visibility="visible";
+                }
+                else{
+                    document.getElementById("error3").style.visibility="hidden";
+                }
+            }
+            function sub(){
+                alert("Submitted");
+            }
+        </script>
+        
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
+</html>

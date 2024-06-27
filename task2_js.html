@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task 2 JS</title>
+    </head>
+    <body>
+        <form>
+            <label for="inp">Input</label>
+            <input type="text" id="inp">
+            <button onclick="return alpha()">Order Alphabetically</button>
+            <p id="ans"></p>
+        </form>
+
+        <script>
+            function alpha(){
+                let inp=document.getElementById("inp").value;
+                document.getElementById("ans").innerHTML=inp.split('').sort().join('');
+                return false;
+            }
+        </script>
+    </body>
+</html>

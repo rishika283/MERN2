@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        .error {
+            color: red;
+            display: none;
+        }
+        .input-error {
+            border: 1px solid red;
+        }
+        .poor {
+            color: red;
+        }
+        body {
+            background: linear-gradient(to bottom right, #ffccff, #ccffff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center p-5" style="width: 60%;">
+        <h2 class="text-center">Registration Form</h2>
+        <form id="registrationForm">
+            <div class="row py-2">
+                <div class="col-md-3"><label for="firstName">First Name:</label></div>
+                    <div class="col-md-7"><input type="text" id="firstName" name="firstName" class="form-control"></div>
+                    <div class="col-md-2"><span id="firstName-error" class="error poor">POOR</span></div>
+                </div>
+                <div class="row py-2">
+                    <div class="col-md-3"><label for="lastName">Last Name:</label></div>
+                    <div class="col-md-7"><input type="text" id="lastName" name="lastName" class="form-control"></div>
+                    <div class="col-md-2"><span id="lastName-error" class="error poor">POOR</span></div>
+                </div>
+                <div class="row py-2">
+                    <div class="col-md-3"><label for="email">Email:</label></div>
+                    <div class="col-md-7"><input type="text" id="email" name="email" class="form-control"></div>
+                    <div class="col-md-2"><span id="email-error" class="error poor">POOR</span></div>
+                </div>
+                <div class="row py-2">
+                    <div class="col-md-3"><label for="password">Password:</label></div>
+                    <div class="col-md-7"><input type="password" id="password" name="password" class="form-control"></div>
+                    <div class="col-md-2"><span id="password-error" class="error poor">POOR</span></div>
+                </div>
+                <div class="row py-2">
+                    <div class="col-md-3"><label for="repassword">Re-enter Password:</label></div>
+                    <div class="col-md-7"><input type="password" id="repassword" name="repassword" class="form-control"></div>
+                    <div class="col-md-2"><span id="repassword-error" class="error poor">POOR OR MISMATCH</span></div>
+                </div>
+                <div class="row py-2">
+                    <div class="col-md-3"><label>Gender:</label></div>
+                    <div class="col-md-7 text-left">
+                        <input type="radio" id="male" name="gender" value="male">
+                        <label for="male">Male</label>
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">Female</label>
+                    </div>
+                </div>
+                <div class="row py-2">
+                    <div class="col-md-3"><label for="age">Age:</label></div>
+                    <div class="col-md-7"><input type="text" id="age" name="age" class="form-control"></div>
+                    <div class="col-md-2"><span id="age-error" class="error poor">POOR</span></div>
+                </div>
+                <div class="row py-2">
+                    <div class="col-md-3"><label for="phone">Phone Number:</label></div>
+                    <div class="col-md-7"><input type="text" id="phone" name="phone" class="form-control"></div>
+                    <div class="col-md-2"><span id="phone-error" class="error poor">POOR</span></div>
+                </div>
+                <div class="row py-2">
+                    <div class="col-md-3"><label for="address">Address:</label></div>
+                    <div class="col-md-7"><textarea id="address" name="address" class="form-control"></textarea></div>
+                    <div class="col-md-2"><span id="address-error" class="error poor">POOR</span></div>
+                </div>
+                <div class="row py-2">
+                    <div class="col-md-3"><label for="state">State:</label></div>
+                    <div class="col-md-7"><input type="text" id="state" name="state" class="form-control"></div>
+                    <div class="col-md-2"><span id="state-error" class="error poor">POOR</span></div>
+                </div>
+                <div class="row py-2">
+                    <div class="col-md-3"><label for="country">Country:</label></div>
+                    <div class="col-md-7">
+                        <select id="country" name="country" class="form-control">
+                            <option>Choose your country</option>
+                            <option>India</option>
+                            <option>US</option>
+                            <option>UK</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2"><span id="country-error" class="error poor">POOR</span></div>
+                </div>
+                <div class="row py-2">
+                    <div class="col-md-3"><label for="languages">Languages known:</label></div>
+                    <div class="col-md-7 text-left">
+                        <input type="checkbox" id="english" name="languages" value="English">
+                        <label for="english">English</label>
+                        <input type="checkbox" id="kannada" name="languages" value="Kannada">
+                        <label for="kannada">Kannada</label>
+                        <input type="checkbox" id="hindi" name="languages" value="Hindi">
+                        <label for="hindi">Hindi</label>
+                        <input type="checkbox" id="telugu" name="languages" value="Telugu">
+                        <label for="telugu">Telugu</label>
+                    </div>
+                </div>
+                <div class="row py-2">
+                    <div class="col-md-12 text-left">
+                        <input type="checkbox" id="declaration" name="declaration">Hereby I declare all the given details are true
+                    </div>
+                </div>
+                <div class="row py-2">
+                    <div class="col-md-6 ml-auto">
+                        <p>Log in to <a href="https://www.ethnus.com">Ethnus</a> website</p>
+                    </div>                    
+                </div>
+                <div class="row py-2 text-center">
+                    <div class="col-md-12">
+                        <button class="text-light" style="border: 1px solid black; border-radius: 5px; background-color: red;">Register</button>
+                    </div>
+                </div>
+        </form>
+    </div>
+
+
+
+    <script>
+        function validateField(field, regex, errorMessage, errorElementId) {
+            var value = field.value;
+            var errorElement = document.getElementById(errorElementId);
+            if (!regex.test(value)) {
+                field.classList.add("input-error");
+                errorElement.style.display = "inline";
+                errorElement.innerText = errorMessage;
+                return false;
+            } else {
+                field.classList.remove("input-error");
+                errorElement.style.display = "none";
+                return true;
+            }
+        }
+
+        function validateForm() {
+            var isFirstNameValid = validateField(document.getElementById("firstName"), /.+/, "POOR", "firstName-error");
+            var isLastNameValid = validateField(document.getElementById("lastName"), /.+/, "POOR", "lastName-error");
+            var isEmailValid = validateField(document.getElementById("email"), /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, "POOR", "email-error");
+            var isPasswordValid = validateField(document.getElementById("password"), /.+/, "POOR", "password-error");
+            var isRePasswordValid = validateField(document.getElementById("repassword"), new RegExp("^" + document.getElementById("password").value + "$"), "POOR OR MISMATCH", "repassword-error");
+            var isAgeValid = validateField(document.getElementById("age"), /^[1-9][0-9]*$/, "POOR", "age-error");
+            var isPhoneNumberValid = validateField(document.getElementById("phone"), /^[0-9]{10}$/, "POOR", "phone-error");
+            var isAddressValid = validateField(document.getElementById("address"), /.+/, "POOR", "address-error");
+            var isStateValid = validateField(document.getElementById("state"), /.+/, "POOR", "state-error");
+            var isCountryValid = validateField(document.getElementById("country"), /.+/, "POOR", "country-error");
+
+            return isFirstNameValid && isLastNameValid && isEmailValid && isPasswordValid && isRePasswordValid &&
+                   isAgeValid && isPhoneNumberValid && isAddressValid && isStateValid && isCountryValid;
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("firstName").addEventListener("input", function() {
+                validateField(this, /.+/, "POOR", "firstName-error");
+            });
+            document.getElementById("lastName").addEventListener("input", function() {
+                validateField(this, /.+/, "POOR", "lastName-error");
+            });
+            document.getElementById("email").addEventListener("input", function() {
+                validateField(this, /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, "POOR", "email-error");
+            });
+            document.getElementById("password").addEventListener("input", function() {
+                validateField(this, /.+/, "POOR", "password-error");
+            });
+            document.getElementById("repassword").addEventListener("input", function() {
+                validateField(this, new RegExp("^" + document.getElementById("password").value + "$"), "POOR OR MISMATCH", "repassword-error");
+            });
+            document.getElementById("age").addEventListener("input", function() {
+                validateField(this, /^[1-9][0-9]*$/, "POOR", "age-error");
+            });
+            document.getElementById("phone").addEventListener("input", function() {
+                validateField(this, /^[0-9]{10}$/, "POOR", "phone-error");
+            });
+            document.getElementById("address").addEventListener("input", function() {
+                validateField(this, /.+/, "POOR", "address-error");
+            });
+            document.getElementById("state").addEventListener("input", function() {
+                validateField(this, /.+/, "POOR", "state-error");
+            });
+            document.getElementById("country").addEventListener("change", function() {
+                validateField(this, /.+/, "POOR", "country-error");
+            });
+
+            document.getElementById("registrationForm").addEventListener("submit", function(event) {
+                event.preventDefault();
+                if (validateForm()) {
+                    alert("Submitted");
+                }
+            });
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task 7 JS</title>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <img src="train.png" id="train">
+        <div class="text-center">
+            <h3 class="text-info">Click on the following buttons to handle animation</h3>
+            <button onclick="start()">Start</button>
+            <button onclick="stop()">Stop</button>
+        </div>
+        
+  
+        <style>
+            #train{
+                position: relative;
+                animation: move 20s infinite;
+                animation-play-state: paused;
+            }
+            @keyframes move{
+                from {left: 1%;}
+                to {left: 100%;}
+            }
+        </style>
+        <script>
+            function start(){
+                document.getElementById("train").style.animationPlayState='running';
+            }
+            function stop(){
+                document.getElementById("train").style.animationPlayState='paused';
+            }
+        </script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
+</html>
